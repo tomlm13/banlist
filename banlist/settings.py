@@ -126,6 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:3000', 'https://pure-gorge-24247.herokuapp.com',
 ]
 django_heroku.settings(locals())
