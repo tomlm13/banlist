@@ -5,6 +5,9 @@ from django.views.generic import ListView
 from .models import BannedUser
 from .forms import BanUserForm
 from django.contrib import messages
+from rest_framework import viewsets
+from .serializers import BannedUserSerializer
+
 # Create your views here.
 def banuser(request):
     if request.method == 'POST':
@@ -24,3 +27,7 @@ class BannedUserListView(ListView):
 
     template_name='banuser/ban_list.html'
     context_object_name = 'bannedusers'
+
+class TestReactView(viewsets.ModelViewSet):
+    serializer_class = BannedUserSerializer
+    queryset = BannedUser.objects.all()
